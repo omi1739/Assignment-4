@@ -165,7 +165,7 @@
 
             <p class="job-details mt-3"><small>${interview.jobDetails}</small></p>
 
-            <p class="status btn mt-2">${interview.status}</p>
+            <p class="status px-9 btn mt-2">${interview.status}</p>
 
             <p class="notes mt-3">${interview.notes}</p>
 
@@ -202,7 +202,7 @@
 
             <p class="job-details mt-3"><small>${rejected.jobDetails}</small></p>
 
-            <p class="status btn mt-2">${rejected.status}</p>
+            <p class="status px-9 btn mt-2">${rejected.status}</p>
 
             <p class="notes mt-3">${rejected.notes}</p>
 

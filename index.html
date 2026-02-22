@@ -34,10 +34,10 @@
             
             </div>
 
-            <div id="reject-part" class="reject-part bg-slate-200 rounded-2xl p-4">
+            <div id="rejected-part" class="reject-part bg-slate-200 rounded-2xl p-4">
             
                 <p>Reject</p>
-                <h2 id="reject-number"  class="text-2xl font-bold text-red-600">0</h2>
+                <h2 id="rejected-number"  class="text-2xl font-bold text-red-600">0</h2>
            
             </div>
 
@@ -48,28 +48,42 @@
     <hr class="mt-7 text-gray-300">
    
 
-    <section class="w-[80%] mx-auto">
+    <main class="w-[80%] mx-auto mt-5">
 
-        <h2 class="text-2xl font-semibold">Available Jobs</h2>
+     <div class="flex justify-between">
+           <h2 class="text-2xl font-semibold">Available Jobs</h2>
+
+           <p id="number-of-jobs" class=""> 0 jobs </p>
+     </div>
 
         <div class="buttons flex gap-5 mt-7">
 
-            <button id="all-button" class="btn btn-info">All</button>
-            <button id="interview-button" class="btn">Interview</button>
-            <button id="rejected-button" class="btn">Rejected</button>
+            <button onclick = "toggleStyle('all-button')"  id="all-button" class="btn btn-info text-white">All</button>
+            <button onclick = "toggleStyle('interview-button')"  id="interview-button" class="btn text-black">Interview</button>
+            <button onclick = "toggleStyle('rejected-button')"  id="rejected-button" class="btn text-black">Rejected</button>
 
         </div>
 
+        <!-- Filtered Section -->
+
+        <section class="filtered-section">
+            
+        </section>
+
+
+        <section id="all-cards" class="all-cards">
+
         <div class="cards border p-8 bg-sky-50 rounded-lg border-none mt-9 flex justify-between ">
             
-           <div>
+            <div>
 
-             <h3 class="text-xl font-medium">Mobile First Corp</h3>
-            <p class="mt-1">React Native Developer</p>
+            <h3 class=" company-name text-xl font-medium">Mobile First Corp</h3>
+            <p class=" job-post mt-1">React Native Developer</p>
 
-            <p class="mt-3"><small>Remote . Full Time . $130,000 - $175,000</small></p>
-            <p class="btn mt-2">NOT APPLIED</p>
-            <p class="mt-3">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+            <p class="job-details mt-3"><small>Remote . Full Time . $130,000 - $175,000</small></p>
+            <p class=" status btn mt-2">NOT APPLIED</p>
+            <p class= "notes mt-3">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+
             <button class="btn btn-success btn-outline mt-3">INTERVIEW</button>
             <button class="btn btn-error btn-outline mt-3 mx-3">REJECTED</button>
 
@@ -85,12 +99,12 @@
             
            <div>
 
-             <h3 class="text-xl font-medium">Web Flow Agency</h3>
-            <p class="mt-1">Web Desigener & Developer</p>
+             <h3 class="company-name text-xl font-medium">Web Flow Agency</h3>
+            <p class="job-post mt-1">Web Desigener & Developer</p>
 
-            <p class="mt-3"><small>Remote . Part Time . $150,000 - $175,000</small></p>
-            <p class="btn mt-2">NOT APPLIED</p>
-            <p class="mt-3">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+            <p class="job-details mt-3"><small>Remote . Part Time . $150,000 - $175,000</small></p>
+            <p class="status btn mt-2">NOT APPLIED</p>
+            <p class="notes mt-3">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
             <button class="btn btn-success btn-outline mt-3">INTERVIEW</button>
             <button class="btn btn-error btn-outline mt-3 mx-3">REJECTED</button>
 
@@ -107,12 +121,12 @@
             <div>
 
                 
-            <h3 class="text-xl font-medium">DataViz Solutions</h3>
-            <p class="mt-1">Data Visualization Specialist</p>
+            <h3 class="company-name text-xl font-medium">DataViz Solutions</h3>
+            <p class="job-post mt-1">Data Visualization Specialist</p>
 
-            <p class="mt-3"><small>Boston, MA • Full-time • $125,000 - $165,000</small></p>
-            <p class="btn mt-2">NOT APPLIED</p>
-            <p class="mt-3">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+            <p class="job-details mt-3"><small>Boston, MA • Full-time • $125,000 - $165,000</small></p>
+            <p class="status btn mt-2">NOT APPLIED</p>
+            <p class="notes mt-3">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
             <button class="btn btn-success btn-outline mt-3">INTERVIEW</button>
             <button class="btn btn-error btn-outline mt-3 mx-3">REJECTED</button>
 
@@ -127,12 +141,12 @@
             
            <div>
 
-             <h3 class="text-xl font-medium">CloudFirst Inc</h3>
-            <p class="mt-1">Backend Developer</p>
+             <h3 class="company-name text-xl font-medium">CloudFirst Inc</h3>
+            <p class="job-post mt-1">Backend Developer</p>
 
-            <p class="mt-3"><small>Seattle, WA • Full-time • $140,000 - $190,000</small></p>
-            <p class="btn mt-2">NOT APPLIED</p>
-            <p class="mt-3">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+            <p class="job-details mt-3"><small>Seattle, WA • Full-time • $140,000 - $190,000</small></p>
+            <p class="status btn mt-2">NOT APPLIED</p>
+            <p class="notes mt-3">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
             <button class="btn btn-success btn-outline mt-3">INTERVIEW</button>
             <button class="btn btn-error btn-outline mt-3 mx-3">REJECTED</button>
 
@@ -148,11 +162,11 @@
             <div>
 
                 
-            <h3 class="text-xl font-medium">Innovation Labs</h3>
-            <p class="mt-1">UI/UX Engineer</p>
+            <h3 class="company-name text-xl font-medium">Innovation Labs</h3>
+            <p class="job-post mt-1">UI/UX Engineer</p>
 
-            <p class="mt-3"><small>Austin, TX • Full-time • $110,000 - $150,000</small></p>
-            <p class="btn mt-2">NOT APPLIED</p>
+            <p class="job-details mt-3"><small>Austin, TX • Full-time • $110,000 - $150,000</small></p>
+            <p class="status btn mt-2">NOT APPLIED</p>
             <p class="mt-3">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
             <button class="btn btn-success btn-outline mt-3">INTERVIEW</button>
             <button class="btn btn-error btn-outline mt-3 mx-3">REJECTED</button>
@@ -168,12 +182,12 @@
             
             <div>
 
-                <h3 class="text-xl font-medium">MegaCorp Solutions</h3>
-            <p class="mt-1">JavaScript Developer</p>
+                <h3 class="company-name text-xl font-medium">MegaCorp Solutions</h3>
+            <p class=" job-post">JavaScript Developer</p>
 
-            <p class="mt-3"><small>New York, NY • Full-time • $130,000 - $170,00</small></p>
-            <p class="btn mt-2">NOT APPLIED</p>
-            <p class="mt-3">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+            <p class="job-details mt-3"><small>New York, NY • Full-time • $130,000 - $170,00</small></p>
+            <p class="status btn mt-2">NOT APPLIED</p>
+            <p class="notes mt-3">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
             <button class="btn btn-success btn-outline mt-3">INTERVIEW</button>
             <button class="btn btn-error btn-outline mt-3 mx-3">REJECTED</button>
 
@@ -188,12 +202,12 @@
             
            <div>
 
-             <h3 class="text-xl font-medium">StartupXYZ</h3>
-            <p class="mt-1">Full Stack Engineer</p>
+             <h3 class="company-name text-xl font-medium">StartupXYZ</h3>
+            <p class="job-post mt-1">Full Stack Engineer</p>
 
-            <p class="mt-3"><small>Remote • Full-time • $120,000 - $160,000</small></p>
-            <p class="btn mt-2">NOT APPLIED</p>
-            <p class="mt-3">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+            <p class="job-details mt-3"><small>Remote • Full-time • $120,000 - $160,000</small></p>
+            <p class="status btn mt-2">NOT APPLIED</p>
+            <p class="notes mt-3">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
             <button class="btn btn-success btn-outline mt-3">INTERVIEW</button>
             <button class="btn btn-error btn-outline mt-3 mx-3">REJECTED</button>
 
@@ -209,12 +223,12 @@
             <div>
 
                 
-            <h3 class="text-xl font-medium">TechCorp Industries</h3>
-            <p class="mt-1">Senior Frontend Developer</p>
+            <h3 class="company-name text-xl font-medium">TechCorp Industries</h3>
+            <p class="job-post mt-1">Senior Frontend Developer</p>
 
-            <p class="mt-3"><small>San Francisco, CA • Full-time • $130,000 - $175,000</small></p>
-            <p class="btn mt-2">NOT APPLIED</p>
-            <p class="mt-3">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
+            <p class="job-details mt-3"><small>San Francisco, CA • Full-time • $130,000 - $175,000</small></p>
+            <p class="status btn mt-2">NOT APPLIED</p>
+            <p class="notes mt-3">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
             <button class="btn btn-success btn-outline mt-3">INTERVIEW</button>
             <button class="btn btn-error btn-outline mt-3 mx-3">REJECTED</button>
 
@@ -224,10 +238,10 @@
 
         </div>
 
+        </section>
 
 
-
-    </section>
+    </main>
 
 
     <script src="index.js"></script>

@@ -23,6 +23,7 @@
 
  function calculateNumber(){
 
+
     totalNumber.innerText = allCards.children.length;
     jobnumber.innerText = allCards.children.length + ' jobs';
 
@@ -173,8 +174,15 @@
         calculateNumber();
 
     }
+
+    if(totalNumber.innerText == '0'){
+    document.getElementById('nothing').classList.remove('hidden');
+ }
     
  })
+
+ 
+
 
  function renderInterview(){
     

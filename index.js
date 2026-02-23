@@ -152,7 +152,8 @@
 
     else if(event.target.closest('.delete-button')){
 
-        const card = event.target.parentNode;
+        const deleteButton = event.target.closest('.delete-button');
+        const card = deleteButton.closest('.cards');
         card.remove() ;
         calculateNumber();
 

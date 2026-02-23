@@ -154,7 +154,22 @@
 
         const deleteButton = event.target.closest('.delete-button');
         const card = deleteButton.closest('.cards');
+        const company_Name = card.querySelector('.company-name').innerText;
+
+        interviewList = interviewList.filter(item => item.companyName != company_Name);
+        rejectedList = rejectedList.filter(item => item.companyName != company_Name);
+
+
         card.remove() ;
+
+        if(currentStatus == 'interview-button'){
+            renderInterview();
+        }
+        else if(currentStatus == 'rejected-button'){
+            
+            renderRejected();
+        }
+
         calculateNumber();
 
     }
@@ -188,7 +203,7 @@
 
            </div>
 
-            <button class="btn"><i class="fa-regular fa-trash-can"></i></button>
+            <button class="btn delete-button"><i class="fa-regular fa-trash-can"></i></button>
 
         `
 
@@ -225,9 +240,10 @@
 
            </div>
 
-            <button class="btn"><i class="fa-regular fa-trash-can"></i></button>
+            <button class="btn delete-button"><i class="fa-regular fa-trash-can"></i></button>
 
         `
+        
 
         filteredSection.appendChild(div);
     }

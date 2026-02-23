@@ -104,6 +104,9 @@
    if(currentStatus == 'interview-button'){
      renderInterview();
    }
+   else if(currentStatus == 'rejected-button'){
+        renderRejected();
+   }
 
    calculateNumber()
 
@@ -139,11 +142,21 @@
 
    if(currentStatus == 'rejected-button'){
          renderRejected();
+   }else if(currentStatus == 'interview-button'){
+         renderInterview();
    }
 
    calculateNumber()
 
     }  
+
+    else if(event.target.closest('.delete-button')){
+
+        const card = event.target.parentNode;
+        card.remove() ;
+        calculateNumber();
+
+    }
     
  })
 

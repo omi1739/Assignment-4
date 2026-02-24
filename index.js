@@ -26,11 +26,18 @@
 
 
     totalNumber.innerText = allCards.children.length;
-    jobnumber.innerText = allCards.children.length + ' jobs';
-
     interviewNumber.innerText = interviewList.length;
-
     rejectedNumber.innerText = rejectedList.length;
+
+    if(currentStatus == 'all-button'){
+        jobnumber.innerText = allCards.children.length + ' jobs';
+    }
+    else if(currentStatus == 'interview-button'){
+        jobnumber.innerText = interviewList.length + ' jobs';
+    }
+    else if (currentStatus == 'rejected-button'){
+        jobnumber.innerText = rejectedList.length + ' jobs';
+    }
  }
 
  calculateNumber();
@@ -69,7 +76,7 @@
         filteredSection.classList.remove('hidden');
         renderRejected();
     }
-
+      calculateNumber();
  }
 
 
@@ -189,6 +196,11 @@
     
     filteredSection.innerHTML = '';
 
+    if(interviewList.length == 0){
+        showEmpty();
+        return
+    }
+
     for(let interview of interviewList){
         
         const div = document.createElement('div');
@@ -226,6 +238,11 @@
     
     filteredSection.innerHTML = '';
 
+    if(rejectedList.length == 0){
+        showEmpty();
+        return;
+    }
+
     for(let rejected of rejectedList){
         
         const div = document.createElement('div');
@@ -258,4 +275,16 @@
     }
     
     
+ }
+
+ function showEmpty(){
+    filteredSection.innerHTML = `
+         <div id="nothing" class=" w-[80%] mx-auto border p-10 bg-sky-50 rounded-lg border-none mt-9 mb-10 ">
+    <div class="text-center ">
+        <img class="mx-auto mt-10" src="./jobs.png" alt="">
+        <h3 class="text-xl font-medium mt-10 mb-3 ">No jobs available</h3>
+        <p  class="mb-7">Check back soon for new job opportunities</p>
+    </div>
+</div>
+    `
  }

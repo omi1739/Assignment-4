@@ -24,6 +24,7 @@
  function calculateNumber(){
 
 
+
     totalNumber.innerText = allCards.children.length;
     jobnumber.innerText = allCards.children.length + ' jobs';
 
